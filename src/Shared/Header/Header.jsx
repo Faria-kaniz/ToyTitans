@@ -60,7 +60,7 @@ const Header = () => {
                                     className="btn btn-ghost normal-case text-xl"
                                     to="/add-toy"
                                 >
-                                    Add A Toy
+                                    Add Toy
                                 </ActiveLink>
                             </li>
                             <li>
@@ -109,16 +109,16 @@ const Header = () => {
                                     className="btn btn-ghost normal-case text-xl"
                                     to="/add-toy"
                                 >
-                                    Add A Toy
+                                    Add Toy
                                 </ActiveLink>
                             </li>
                             <li>
-                                <Link
+                                <ActiveLink
                                     className="btn btn-ghost normal-case text-xl"
                                     to="/blogs"
                                 >
                                     Blogs
-                                </Link>
+                                </ActiveLink>
                             </li>
                         </ul>
                     </div>

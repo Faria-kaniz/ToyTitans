@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -7,11 +8,11 @@ const Login = () => {
             <p>Login</p>
             <form>
                 <div className="user-box">
-                    <input required="" name="" type="text" />
+                    <input required="" name="email" type="text" />
                     <label>Email</label>
                 </div>
                 <div className="user-box">
-                    <input required="" name="" type="password" />
+                    <input required="" name="password" type="password" />
                     <label>Password</label>
                 </div>
                 <div className="button">
@@ -19,19 +20,19 @@ const Login = () => {
                     <div></div>
                 </div>
                 <br />
-                <a href="#">
+                <Link href="#">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     Login
-                </a>
+                </Link>
             </form>
             <p>
                 Don't have an account?{" "}
-                <a href="" className="a2">
+                <Link to="/registration" className="a2">
                     Sign up!
-                </a>
+                </Link>
             </p>
         </div>
     );
