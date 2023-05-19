@@ -82,7 +82,7 @@ const MyToys = () => {
                                                 <BsFillEyeFill></BsFillEyeFill>
                                             </button>
                                         </Link>
-                                        <Link to={"/toy/" + toy._id}>
+                                        <Link to={"/toy/update/" + toy._id}>
                                             <button className="btn btn-sm mr-1">
                                                 <FaEdit></FaEdit>
                                             </button>

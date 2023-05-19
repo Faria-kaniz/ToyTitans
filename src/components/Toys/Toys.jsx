@@ -1,5 +1,7 @@
 import React from 'react';
+import { BsFillEyeFill } from "react-icons/bs";
 import { Link, useLoaderData } from 'react-router-dom';
+import './Toys.css';
 
 const Toys = ({children}) => {
     const toysList = useLoaderData();    
@@ -8,7 +10,7 @@ const Toys = ({children}) => {
     return (
         <>
             <h1 className="text-center">Available all toys</h1>
-            <div className="container mx-auto px-4 pt-4 overflow-x-auto">
+            <div className="custom-container mx-auto px-4 pt-4 overflow-x-auto">
                 <table className="table table-compact w-full">
                     <thead>
                         <tr>
@@ -33,7 +35,7 @@ const Toys = ({children}) => {
                                 <td>
                                     <Link to={"/toy/" + toy._id}>
                                         <button className="btn btn-sm">
-                                            View Details
+                                            <BsFillEyeFill></BsFillEyeFill>
                                         </button>
                                     </Link>
                                 </td>
