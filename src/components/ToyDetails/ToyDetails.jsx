@@ -20,7 +20,7 @@ const ToyDetails = () => {
             <div className="img">
                 <img src={picture} alt="toy" />
             </div>
-            <span>About Me</span>
+            <span>{name}</span>
             <p className="info">{description}</p>
             <div className="share"></div>
             <Link to="">

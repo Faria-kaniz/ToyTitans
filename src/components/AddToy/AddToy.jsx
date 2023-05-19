@@ -1,7 +1,9 @@
-import React from 'react';
-import Swal from 'sweetalert2';
+import React, { useContext } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const AddToy = () => {
+    const { user } = useContext(AuthContext);
     const handleAddToy = (event) => {
         event.preventDefault();
 
@@ -17,15 +19,15 @@ const AddToy = () => {
         const newToy = {
             picture: toy_img_url,
             name: toy_name,
-            seller_name: "faria",
-            seller_email: "faria@gmail.com",
+            seller_name: user.displayName,
+            seller_email: user.email,
             sub_category: toy_sub_cat,
             price: toy_price,
-            rating: toy_rating, 
+            rating: toy_rating,
 
             quantity: toy_quantity,
             description: toy_description,
-            created_by: "2",
+            created_by: user.uid,
         };
         console.log(newToy);
 
@@ -45,6 +47,7 @@ const AddToy = () => {
                         icon: "success",
                         confirmButtonText: "Ok",
                     });
+                    form.reset();
                 }
             });
     };
@@ -82,35 +85,6 @@ const AddToy = () => {
                     </div>
                 </div>
 
-                {/* <div className="md:flex gap-4">
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Seller Name</span>
-                        </label>
-                        <label className="input-group input-group-sm">
-                            <input
-                                type="text"
-                                placeholder="Enter Seller Name"
-                                name="seller_name"
-                                className="input input-bordered w-full input-sm"
-                            />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Seller Email</span>
-                        </label>
-                        <label className="input-group input-group-sm">
-                            <input
-                                type="email"
-                                placeholder="Enter Seller Email"
-                                name="seller_email"
-                                className="input input-bordered w-full input-sm"
-                            />
-                        </label>
-                    </div>
-                </div> */}
-
                 <div className="md:flex gap-4">
                     <div className="form-control md:w-1/4">
                         <label className="label">
@@ -118,10 +92,10 @@ const AddToy = () => {
                         </label>
                         <label className="input-group input-group-sm">
                             <select
-                                class="select select-bordered w-full select-sm"
+                                className="select select-bordered w-full select-sm"
                                 name="toy_sub_cat"
                             >
-                                <option disabled selected>
+                                <option value="">
                                     -- Select One --
                                 </option>
                                 <option>Marvel</option>

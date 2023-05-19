@@ -5,7 +5,7 @@ import ActiveLink from '../../Routes/ActiveLink/ActiveLink';
 import useTitle from '../../components/Hooks/useTitle';
 
 const Header = () => {
-    useTitle("Header");
+    useTitle("Header"); 
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../Layout/MainLayout';
 import Blog from '../Pages/Blog/Blog';
@@ -10,6 +10,8 @@ import ToyDetails from "../components/ToyDetails/ToyDetails";
 import Toys from '../components/Toys/Toys';
 import { fetchToys } from '../loaders/CustomLoaders';
 import PrivateRoute from './PrivateRoute';
+import MyToys from '../components/MyToys/MyToys';
+
 
 const router = createBrowserRouter([
     {
@@ -29,10 +31,9 @@ const router = createBrowserRouter([
                 path: "/my-toys",
                 element: (
                     <PrivateRoute>
-                        <Toys>my toys</Toys>
+                        <MyToys/>
                     </PrivateRoute>
-                ),
-                loader: () => fetchToys(1),
+                )
             },
             {
                 path: "/toy/:id",
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
                 path: "/add-toy",
                 element: (
                     <PrivateRoute>
-                        <AddToy/>
+                        <AddToy />
                     </PrivateRoute>
                 ),
             },
