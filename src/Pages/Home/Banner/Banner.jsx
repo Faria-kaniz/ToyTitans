@@ -1,52 +1,22 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React from 'react';
+import './Banner.css'
 
-export default class Banner extends Component {
-  render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 2000,
-      cssEase: "linear"
-    };
+const Banner = () => {
     return (
-        <div>
-            <h2>Auto Play</h2>
-            <Slider {...settings}>
-                <div>
-                    <img src="https://i.ibb.co/2vTfXQ5/1.png" alt="" />
-                </div>
-                <div>
-                    <h3>
-                        <img src="https://i.ibb.co/2vTfXQ5/1.png" alt="" />
-                    </h3>
-                </div>
-                <div>
-                    <h3>
-                        <img src="https://i.ibb.co/2vTfXQ5/1.png" alt="" />
-                    </h3>
-                </div>
-                <div>
-                    <h3>
-                        <img src="https://i.ibb.co/2vTfXQ5/1.png" alt="" />
-                    </h3>
-                </div>
-                <div>
-                    <h3>
-                        <img src="https://i.ibb.co/2vTfXQ5/1.png" alt="" />
-                    </h3>
-                </div>
-                <div>
-                    <h3>
-                        <img src="https://i.ibb.co/2vTfXQ5/1.png" alt="" />
-                    </h3>
-                </div>
-            </Slider>
+        <div className="actionTxtType5">
+            <div className="view_tit">Sweep To Bottom</div>
+            <div className="view_txt">
+                Dream into reality creates a small one to cherish for long
+                <br />
+                time would like to experience unforgettable.
+                <br />
+                As a result, does not feel so far with a new sensibility and
+                sensitivity,
+                <br />
+                plus you want to make a new sensibility.
+            </div>
         </div>
     );
-  }
-}
+};
+
+export default Banner;

@@ -1,10 +1,15 @@
-import React from 'react';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./ActiveLink.css";
 
-const ActiveLink = () => {
+const ActiveLink = ({ to, children }) => {
     return (
-        <div>
-            
-        </div>
+        <NavLink
+            to={to}
+            className={({ isActive }) => (isActive ? "active" : "")}
+        >
+            {children}
+        </NavLink>
     );
 };
 
