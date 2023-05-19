@@ -148,7 +148,6 @@ const Header = () => {
                                     <li>
                                         <a className="justify-between">
                                             {user.displayName}
-                                            <span className="badge">New</span>
                                         </a>
                                     </li>
                                     <li>

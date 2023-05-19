@@ -9,6 +9,7 @@ import AddToy from '../components/AddToy/AddToy';
 import ToyDetails from "../components/ToyDetails/ToyDetails";
 import Toys from '../components/Toys/Toys';
 import { fetchToys } from '../loaders/CustomLoaders';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -26,12 +27,20 @@ const router = createBrowserRouter([
             },
             {
                 path: "/my-toys",
-                element: <Toys>my toys</Toys>,
+                element: (
+                    <PrivateRoute>
+                        <Toys>my toys</Toys>
+                    </PrivateRoute>
+                ),
                 loader: () => fetchToys(1),
             },
             {
                 path: "/toy/:id",
-                element: <ToyDetails />,
+                element: (
+                    <PrivateRoute>
+                        <ToyDetails />
+                    </PrivateRoute>
+                ),
                 loader: ({ params }) =>
                     fetch(
                         `${import.meta.env.VITE_API_BASE_URL}toy/${params.id}`
@@ -39,7 +48,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-toy",
-                element: <AddToy></AddToy>,
+                element: (
+                    <PrivateRoute>
+                        <AddToy/>
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/blogs",
