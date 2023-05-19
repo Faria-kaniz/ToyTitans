@@ -6,8 +6,8 @@ import Home from '../Pages/Home/Home/Home';
 import Login from '../Pages/Login/Login';
 import Registration from '../Pages/Registration/Registration';
 import AddToy from '../components/AddToy/AddToy';
-import Toys from '../components/Toys/Toys';
 import ToyDetails from "../components/ToyDetails/ToyDetails";
+import Toys from '../components/Toys/Toys';
 import { fetchToys } from '../loaders/CustomLoaders';
 
 const router = createBrowserRouter([

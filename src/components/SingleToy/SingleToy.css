@@ -1,4 +1,4 @@
-.card {
+.custom-card {
   width: 17em;
   height: 22.5em;
   background: #171717;
@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-.card span {
+.custom-card span {
   font-weight: bold;
   color: white;
   text-align: center;
@@ -18,7 +18,7 @@
   font-size: 1em;
 }
 
-.card .info {
+.custom-card .info {
   font-weight: 400;
   color: white;
   display: block;
@@ -27,7 +27,7 @@
   margin: 1em;
 }
 
-.card .img {
+.custom-card .img {
   width: 4.8em;
   height: 4.8em;
   background: white;
@@ -35,23 +35,23 @@
   margin: auto;
 }
 
-.card .share {
+.custom-card .share {
   margin-top: 1em;
   display: flex;
   justify-content: center;
   gap: 1em;
 }
 
-.card a {
+.custom-card a {
   color: white;
   transition: .4s ease-in-out;
 }
 
-.card a:hover {
+.custom-card a:hover {
   color: red;
 }
 
-.card button {
+.custom-card button {
   padding: 0.8em 1.7em;
   display: block;
   margin: auto;
@@ -63,7 +63,7 @@
   transition: .4s ease-in-out;
 }
 
-.card button:hover {
+.custom-card button:hover {
   background: red;
   color: white;
   cursor: pointer;

@@ -36,7 +36,7 @@ const SingleToy = ({ toy, children }) => {
                 </div>
             </div> */}
 
-            <div className="card mx-2">
+            <div className="custom-card mx-2">
                 <div className="img">
                     <img src={picture} alt="toy" />
                 </div>

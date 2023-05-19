@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProviders';
 import ActiveLink from '../../Routes/ActiveLink/ActiveLink';
 import useTitle from '../../components/Hooks/useTitle';
 
 const Header = () => {
-    useTitle('Header');
+    useTitle("Header");
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {})
+            .catch((error) => console.error(error));
+    };
     return (
         <>
             <div className="navbar bg-base-100">
@@ -124,34 +131,45 @@ const Header = () => {
                     </div>
                     {/* main menu ends */}
                     <div className="dropdown dropdown-end">
-                        <Link
-                            className="btn btn-outline btn-accent"
-                            to="/login"
-                        >
-                            Login
-                        </Link>
-                        <label
-                            tabIndex={0}
-                            className="btn btn-ghost btn-circle avatar"
-                        >
-                            <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </label>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-                        >
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>Logout</a>
-                            </li>
-                        </ul>
+                        {user ? (
+                            <>
+                                <label
+                                    tabIndex={0}
+                                    className="btn btn-ghost btn-circle avatar"
+                                >
+                                    <div className="w-10 rounded-full">
+                                        <img src={user.photoURL} />
+                                    </div>
+                                </label>
+                                <ul
+                                    tabIndex={0}
+                                    className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                                >
+                                    <li>
+                                        <a className="justify-between">
+                                            {user.displayName}
+                                            <span className="badge">New</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button
+                                            style={{ color: "black" }}
+                                            onClick={handleLogOut}
+                                            className="btn btn-outline"
+                                        >
+                                            Logout
+                                        </button>
+                                    </li>
+                                </ul>
+                            </>
+                        ) : (
+                            <Link
+                                className="btn btn-outline btn-accent"
+                                to="/login"
+                            >
+                                Login
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>

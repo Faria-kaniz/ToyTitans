@@ -4,6 +4,7 @@ import SingleToy from "../SingleToy/SingleToy";
 
 const Toys = ({children}) => {
     const toysList = useLoaderData();    
+    console.log(toysList);
 
     return (
         <div className="container flex">
