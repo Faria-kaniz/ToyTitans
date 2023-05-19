@@ -7,6 +7,8 @@ import Login from '../Pages/Login/Login';
 import Registration from '../Pages/Registration/Registration';
 import AddToy from '../components/AddToy/AddToy';
 import Toys from '../components/Toys/Toys';
+import ToyDetails from "../components/ToyDetails/ToyDetails";
+import { fetchToys } from '../loaders/CustomLoaders';
 
 const router = createBrowserRouter([
     {
@@ -20,10 +22,20 @@ const router = createBrowserRouter([
             {
                 path: "/all-toys",
                 element: <Toys></Toys>,
+                loader: () => fetchToys(),
             },
             {
                 path: "/my-toys",
-                element: <Toys></Toys>,
+                element: <Toys>my toys</Toys>,
+                loader: () => fetchToys(1),
+            },
+            {
+                path: "/toy/:id",
+                element: <ToyDetails />,
+                loader: ({ params }) =>
+                    fetch(
+                        `${import.meta.env.VITE_API_BASE_URL}toy/${params.id}`
+                    ),
             },
             {
                 path: "/add-toy",
@@ -39,7 +51,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/registration",
-                element: <Registration></Registration>
+                element: <Registration></Registration>,
             },
         ],
     },
