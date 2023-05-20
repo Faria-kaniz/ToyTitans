@@ -15,10 +15,10 @@ const Gallery = ({ toysList }) => {
                                 className="custom-card w-full h-40"
                             >
                                 <img src={ele.picture} alt={ele.name} />
-                                <div class="hover">
-                                    <div class="line1"></div>
-                                    <div class="line2"></div>
-                                    <div class="sub_tit">{ele.name}</div>
+                                <div className="hover">
+                                    <div className="line1"></div>
+                                    <div className="line2"></div>
+                                    <div className="sub_tit">{ele.name}</div>
                                 </div>
                             </div>
                         );
