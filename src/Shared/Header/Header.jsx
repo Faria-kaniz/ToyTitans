@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
 import ActiveLink from '../../Routes/ActiveLink/ActiveLink';
 import useTitle from '../../components/Hooks/useTitle';
+import './Header.css';
 
 const Header = () => {
     useTitle("Header"); 
@@ -81,7 +82,12 @@ const Header = () => {
                         </ul>
                     </div>
                     {/* mobile menu ends */}
-                    <a className="normal-case text-xl">Toy Titans</a>
+                    <div className="flex">
+                        <div id="headerLogo">
+                            <img src="/images/toyTitansLogo.png" alt="" />
+                        </div>
+                        <a className="normal-case text-xl mt-2 ml-2">Toy Titans</a>
+                    </div>
                 </div>
                 <div className="flex-none">
                     {/* main menu starts */}
