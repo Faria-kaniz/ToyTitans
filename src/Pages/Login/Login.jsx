@@ -79,11 +79,6 @@ const Login = () => {
                     />
                     <label>Password</label>
                 </div>
-                <button className="button" onClick={handleGoogleLogin}>
-                    Continue With Google
-                    <div></div>
-                </button>
-                <br />
                 <Link onClick={handleLogin}>
                     <span></span>
                     <span></span>
@@ -91,6 +86,13 @@ const Login = () => {
                     <span></span>
                     Login
                 </Link>
+                <br />
+                <button className="button" onClick={handleGoogleLogin}>
+                    Continue With Google
+                    <div></div>
+                </button>
+                <br />
+                <br />
             </form>
             <p>
                 Don't have an account?{" "}
