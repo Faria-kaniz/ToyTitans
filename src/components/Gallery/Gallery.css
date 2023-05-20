@@ -1,0 +1,7 @@
+.custom-container {
+    width: 70%;
+    margin: 20px auto;
+}
+.card {
+    min-height: 0px !important;
+}

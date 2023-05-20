@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProviders";
 import "./MyToys.css";
+import useTitle from "../Hooks/useTitle";
 
 const MyToys = () => {
+    useTitle("My Toys"); 
     const [myToys, setMyToys] = useState([]);
 
     const { user } = useContext(AuthContext);
@@ -50,20 +52,46 @@ const MyToys = () => {
         });
     };
 
+    const sortHandler = (event) =>{
+        let optionselected =
+            event.target.value != "" && event.target.value == "Low-High"
+                ? "asc"
+                : 'desc';
+        if (optionselected) {
+            fetch(
+                `${import.meta.env.VITE_API_BASE_URL}toys/${user.uid}/${optionselected}`
+            )
+                .then((res) => res.json())
+                .then((data) => setMyToys(data));
+        }
+        
+    }
+
     return (
         <>
-            <h1 className="text-center">Available all toys</h1>
             <div className="custom-container mx-auto px-4 pt-4 overflow-x-auto">
-                <table className="table table-compact w-full">
+                <h1 className="text-center text-3xl font-bold">All my toys</h1>
+                <div className="my-3">
+                    <span className="label-text">Sort &nbsp;</span>
+                    <select
+                        className="select select-sm select-bordered w-40"
+                        onChange={sortHandler}
+                    >
+                        <option value="">-- select one --</option>
+                        <option>Low-High</option>
+                        <option>High-Low</option>
+                    </select>
+                </div>
+                <table className="table table-compact w-full text-center">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>SL#</th>
                             <th>Seller Name</th>
                             <th>Toy Name</th>
                             <th>Sub-category</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>Action</th>
+                            <th className="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>

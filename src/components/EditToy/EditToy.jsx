@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useTitle from "../Hooks/useTitle";
 
 const EditToy = () => {
+    useTitle("Edit Toy"); 
     const { user } = useContext(AuthContext);
     const toydata = useLoaderData();
     const {
@@ -18,25 +20,19 @@ const EditToy = () => {
 
     const handleEditToy = (event) => {
         event.preventDefault();
-
         const form = event.target;
-        const toy_img_url_inp = form.toy_img_url.value;
-        const toy_name_inp = form.toy_name.value;
-        const toy_sub_cat_inp = form.toy_sub_cat.value;
         const toy_price_inp = form.toy_price.value;
-        const toy_rating_inp = form.toy_rating.value;
         const toy_quantity_inp = form.toy_quantity.value;
         const toy_description_inp = form.toy_description.value;
 
         const newToy = {
-            picture: toy_img_url_inp,
-            name: toy_name_inp,
+            picture: picture,
+            name: name,
             seller_name: user.displayName,
             seller_email: user.email,
-            sub_category: toy_sub_cat_inp,
+            sub_category: sub_category,
             price: toy_price_inp,
-            rating: toy_rating_inp,
-
+            rating: rating,
             quantity: toy_quantity_inp,
             description: toy_description_inp,
             created_by: user.uid,
@@ -65,7 +61,7 @@ const EditToy = () => {
 
     return (
         <div className="bg-[#ddd] p-24">
-            <h1 className="text-3xl">Add Toy Information</h1>
+            <h1 className="text-3xl">Update {name} Information</h1>
             <form onSubmit={handleEditToy}>
                 <div className="md:flex gap-4">
                     <div className="form-control md:w-1/2">
@@ -78,6 +74,7 @@ const EditToy = () => {
                                 placeholder="Please provide toy image url"
                                 defaultValue={picture}
                                 name="toy_img_url"
+                                disabled
                                 className="input input-bordered w-full input-sm"
                             />
                         </label>
@@ -91,6 +88,7 @@ const EditToy = () => {
                                 type="text"
                                 placeholder="Enter Toy name"
                                 name="toy_name"
+                                disabled
                                 defaultValue={name}
                                 className="input input-bordered w-full input-sm"
                             />
@@ -107,6 +105,7 @@ const EditToy = () => {
                             <select
                                 className="select select-bordered w-full select-sm"
                                 name="toy_sub_cat"
+                                disabled
                                 defaultValue={sub_category}
                             >
                                 <option value="">-- Select One --</option>
@@ -139,6 +138,7 @@ const EditToy = () => {
                             <input
                                 type="number"
                                 placeholder="Rating"
+                                disabled
                                 defaultValue={rating}
                                 name="toy_rating"
                                 className="input input-bordered w-full input-sm"

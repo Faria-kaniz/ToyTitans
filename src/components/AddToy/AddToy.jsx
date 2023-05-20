@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useTitle from "../Hooks/useTitle";
 
 const AddToy = () => {
+    useTitle("Add Toy"); 
     const { user } = useContext(AuthContext);
     const handleAddToy = (event) => {
         event.preventDefault();
@@ -15,6 +17,17 @@ const AddToy = () => {
         const toy_rating = form.toy_rating.value;
         const toy_quantity = form.toy_quantity.value;
         const toy_description = form.toy_description.value;
+
+
+        if (!toy_img_url || !toy_name || !toy_sub_cat || !toy_price || !toy_rating || !toy_quantity || !toy_description) {
+            Swal.fire({
+                title: "Warning!",
+                text: "Fields cannot be empty",
+                icon: "error",
+                confirmButtonText: "Ok",
+            });
+            return false;
+        }
 
         const newToy = {
             picture: toy_img_url,
@@ -29,7 +42,6 @@ const AddToy = () => {
             description: toy_description,
             created_by: user.uid,
         };
-        console.log(newToy);
 
         fetch(`${import.meta.env.VITE_API_BASE_URL}toy/add`, {
             method: "POST",

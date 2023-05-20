@@ -81,7 +81,7 @@ const Header = () => {
                         </ul>
                     </div>
                     {/* mobile menu ends */}
-                    <a className="normal-case text-xl">daisyUI</a>
+                    <a className="normal-case text-xl">Toy Titans</a>
                 </div>
                 <div className="flex-none">
                     {/* main menu starts */}
@@ -138,7 +138,10 @@ const Header = () => {
                                     className="btn btn-ghost btn-circle avatar"
                                 >
                                     <div className="w-10 rounded-full">
-                                        <img src={user.photoURL} />
+                                        <img
+                                            src={user.photoURL}
+                                            title={user.displayName}
+                                        />
                                     </div>
                                 </label>
                                 <ul

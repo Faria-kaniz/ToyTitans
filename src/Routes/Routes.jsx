@@ -26,8 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/all-toys",
-                element: <Toys></Toys>,
-                loader: () => fetchToys(),
+                element: <Toys></Toys>
             },
             {
                 path: "/my-toys",

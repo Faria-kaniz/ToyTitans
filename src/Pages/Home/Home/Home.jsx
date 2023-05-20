@@ -8,9 +8,9 @@ const Home = () => {
     const toysList = useLoaderData();  
     return (
         <div>
-            <Banner/>
-            <Gallery/>
-            <TabSection/>
+            <Banner />
+            <Gallery toysList={toysList} />
+            <TabSection toysList={toysList} />
         </div>
     );
 };
