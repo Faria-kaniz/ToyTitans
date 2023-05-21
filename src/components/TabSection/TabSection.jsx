@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import CategoryItem from '../CategoryItem/CategoryItem';
 import './TabSection.css';
 
 const TabSection = ({ toysList }) => {
@@ -9,7 +11,6 @@ const TabSection = ({ toysList }) => {
         // console.log(type);
         const filterData = toysList.filter((ele) => ele.sub_category == type);
         setDataList(filterData);
-        console.log(filterData);
     }
 
     useEffect(()=>{
@@ -19,7 +20,7 @@ const TabSection = ({ toysList }) => {
     return (
         <div className="custom-container mt-4">
             <h1 className="text-center text-5xl font-bold my-8">
-                Shop by category
+                Shop by Category
             </h1>
             <hr />
             <div className="mt-4">
@@ -36,18 +37,59 @@ const TabSection = ({ toysList }) => {
                     </TabList>
 
                     <TabPanel>
-                        <h2>Marvel {dataList.length}</h2>
+                        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-4">
+                            {dataList.map((ele, index) => {
+                                if (index < 4) {
+                                    return (
+                                        <CategoryItem key={index} ele={ele} />
+                                    );
+                                }
+                            })}
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Avengers {dataList.length}</h2>
+                        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-4">
+                            {dataList.map((ele, index) => {
+                                if (index < 4) {
+                                    return (
+                                        <CategoryItem key={index} ele={ele} />
+                                    );
+                                }
+                            })}
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Star Wars {dataList.length}</h2>
+                        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-4">
+                            {dataList.map((ele, index) => {
+                                if (index < 4) {
+                                    return (
+                                        <CategoryItem key={index} ele={ele} />
+                                    );
+                                }
+                            })}
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Transformers {dataList.length}</h2>
+                        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-4">
+                            {dataList.map((ele, index) => {
+                                if (index < 4) {
+                                    return (
+                                        <CategoryItem key={index} ele={ele} />
+                                    );
+                                }
+                            })}
+                        </div>
                     </TabPanel>
                 </Tabs>
+
+                <div className="mt-4 text-center">
+                    <Link to={"/all-toys"}>
+                        <a class="actionBtn2">
+                            <span class="hover"></span>
+                            <span>View All Toys</span>
+                        </a>
+                    </Link>
+                </div>
             </div>
         </div>
     );

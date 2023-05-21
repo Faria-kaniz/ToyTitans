@@ -1,0 +1,133 @@
+.box {
+    border: 1px solid #333;
+    /* width:322px;
+	 height:322px; */
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.actionImg10 {
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+}
+.actionImg10 .codeView_btn {
+    bottom: 20px !important;
+}
+.actionImg10:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 8px;
+    background-color: #9ee4f0;
+    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    transform-origin: left;
+    -webkit-transform-origin: left;
+    -moz-transform-origin: left;
+    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    border-radius: 0 50px 50px 0;
+}
+.actionImg10 .lm_img {
+    overflow: hidden;
+    width: 100%;
+    height: 170px;
+    margin-bottom: 15px;
+    border: 1px solid #dadfe0;
+}
+.actionImg10 .lm_img img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(80%);
+    -webkit-filter: grayscale(80%);
+    transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+}
+.actionImg10 .lm_txt {
+    padding: 0 3px;
+    font-size: 12px;
+    color: #a2a2a2;
+    text-align: left;
+}
+.actionImg10 .lm_txt .sub_tit {
+    display: block;
+    font-size: 20px;
+    color: #7c7c7c;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+.actionImg10:hover:after {
+    transform: scaleX(1.2);
+    -webkit-transform: scaleX(1.2);
+    -moz-transform: scaleX(1.2);
+}
+.actionImg10:hover .lm_img img {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+}
+.actionImg10:hover .lm_txt .sub_tit {
+    color: #4c4c4d;
+}
+.actionImg10:hover .lm_txt .desc {
+    color: #858586;
+}
+.actionBtn1 {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    width: 166px;
+    height: 38px;
+    margin: auto;
+    line-height: 40px;
+    border: 1px solid #4c4c4d;
+    color: #4c4c4d;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: oswald;
+}
+.actionBtn1 span {
+    position: relative;
+    transition: color 0.25s ease-out;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+}
+.actionBtn1:hover span {
+    color: #fff;
+}
+.actionBtn1 .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #4c4c4d;
+    border: 1px solid transparent;
+    transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    transform-origin: center top;
+    -webkit-transform-origin: center top;
+    -moz-transform-origin: center top;
+    -ms-transform-origin: center top;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+.actionBtn1:hover .hover {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+}
