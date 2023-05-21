@@ -1,0 +1,37 @@
+.custom-container {
+    width: 70%;
+    margin: 60px auto;
+}
+
+#subscribe-form{
+    background-color: #9DB2BF;
+    padding: 20px;
+}
+#subscribe-form .container {
+    padding: 20px;
+    background-color: #9DB2BF;
+}
+
+#subscribe-form input[type="text"],
+#subscribe-form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#subscribe-form input[type="checkbox"] {
+    margin-top: 16px;
+}
+
+#subscribe-form input[type="submit"] {
+    background-color: #27374D;
+    color: white;
+    border: none;
+}
+
+#subscribe-form input[type="submit"]:hover {
+    opacity: 0.8;
+}

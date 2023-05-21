@@ -2,11 +2,9 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
 import ActiveLink from '../../Routes/ActiveLink/ActiveLink';
-import useTitle from '../../components/Hooks/useTitle';
 import './Header.css';
 
 const Header = () => {
-    useTitle("Header"); 
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()

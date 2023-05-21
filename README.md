@@ -11,4 +11,4 @@
 
 ## Project live link
 
-[Toy Titans]()
+[Toy Titans](https://comforting-paprenjak-d81c20.netlify.app/)

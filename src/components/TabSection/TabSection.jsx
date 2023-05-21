@@ -22,7 +22,6 @@ const TabSection = ({ toysList }) => {
             <h1 className="text-center text-5xl font-bold my-8">
                 Shop by Category
             </h1>
-            <hr />
             <div className="mt-4">
                 <Tabs>
                     <TabList>
@@ -84,10 +83,10 @@ const TabSection = ({ toysList }) => {
 
                 <div className="mt-4 text-center">
                     <Link to={"/all-toys"}>
-                        <a class="actionBtn2">
-                            <span class="hover"></span>
+                        <div className="actionBtn2">
+                            <span className="hover"></span>
                             <span>View All Toys</span>
-                        </a>
+                        </div>
                     </Link>
                 </div>
             </div>

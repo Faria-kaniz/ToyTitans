@@ -17,10 +17,10 @@ const CategoryItem = ({ ele }) => {
                     <br />
                     <br />
                     <Link to={"/toy/" + ele._id}>
-                        <a className="actionBtn1">
+                        <div className="actionBtn1">
                             <span className="hover"></span>
                             <span>Details</span>
-                        </a>
+                        </div>
                     </Link>
                 </span>
             </div>

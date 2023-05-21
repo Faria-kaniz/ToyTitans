@@ -1,0 +1,280 @@
+.custom-container {
+    width: 70%;
+    margin: 60px auto;
+}
+.rec_view {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border: 1px solid #eee;
+    background-color: #fff;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.reqBox {
+    padding: 20px;
+}
+.reqBox .txt_move {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 0px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transform: translateY(12px);
+    -webkit-transform: translateY(12px);
+    -moz-transform: translateY(12px);
+    /* opacity:0; */
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+.reqBox .txt_move.txt1 {
+    margin-top: 20px;
+}
+.reqBox .txt_move.txt2 {
+    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+}
+.reqBox .txt_move.txt3 {
+    transition-delay: 0.3s;
+    -webkit-transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+}
+.reqBox .txt_move:after {
+    position: absolute;
+    top: 14px;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    content: "";
+    background-color: #444;
+    opacity: 0;
+    transition: opacity 0.1s 0.7s;
+    -webkit-transition: opacity 0.1s 0.7s;
+    -moz-transition: opacity 0.1s 0.7s;
+}
+.reqBox:hover .txt_move {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    opacity: 1;
+}
+.reqBox:hover .txt_move:after {
+    opacity: 1;
+}
+.reqBox:hover .txt_move.txt1:after {
+    animation: Txtline_movetxt1 2.5s 0.7s;
+    -webkit-animation: Txtline_movetxt1 2.5s 0.7s;
+    -moz-animation: Txtline_movetxt1 2.5s 0.7s;
+}
+.reqBox:hover .txt_move.txt2:after {
+    animation: Txtline_movetxt2 2.5s 0.7s;
+    -webkit-animation: Txtline_movetxt2 2.5s 0.7s;
+    -moz-animation: Txtline_movetxt2 2.5s 0.7s;
+}
+.reqBox:hover .txt_move.txt3:after {
+    animation: Txtline_movetxt3 2.5s 0.7s;
+    -webkit-animation: Txtline_movetxt3 2.5s 0.7s;
+    -moz-animation: Txtline_movetxt3 2.5s 0.7s;
+}
+@keyframes Txtline_movetxt1 {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 115%;
+    }
+    52% {
+        width: 115%;
+    }
+    57% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@-webkit-keyframes Txtline_movetxt1 {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 115%;
+    }
+    52% {
+        width: 115%;
+    }
+    57% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes Txtline_movetxt2 {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 115%;
+    }
+    62% {
+        width: 115%;
+    }
+    67% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@-webkit-keyframes Txtline_movetxt2 {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 115%;
+    }
+    62% {
+        width: 115%;
+    }
+    67% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes Txtline_movetxt3 {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 115%;
+    }
+    72% {
+        width: 115%;
+    }
+    77% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@-webkit-keyframes Txtline_movetxt3 {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 115%;
+    }
+    72% {
+        width: 115%;
+    }
+    77% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.reqBox .line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+.reqBox .line.Ltop {
+    border-top: 2px solid #444;
+    transform: scale(0, 1);
+    -webkit-transform: scale(0, 1);
+    -moz-transform: scale(0, 1);
+    -ms-transform: scale(0, 1);
+    transform-origin: left;
+    -webkit-transform-origin: left;
+    -moz-transform-origin: left;
+    -ms-transform-origin: left;
+    transition: transform 0.3s 0.3s;
+    -webkit-transition: -webkit-transform 0.3s 0.3s;
+    -moz-transition: -moz-transform 0.3s 0.3s;
+}
+.reqBox .line.Lbottom {
+    border-bottom: 2px solid #444;
+    transform: scale(0, 1);
+    -webkit-transform: scale(0, 1);
+    -moz-transform: scale(0, 1);
+    -ms-transform: scale(0, 1);
+    transform-origin: left;
+    -webkit-transform-origin: left;
+    -moz-transform-origin: left;
+    -ms-transform-origin: left;
+    transition: transform 0.2s 0.6s;
+    -webkit-transition: -webkit-transform 0.2s 0.6s;
+    -moz-transition: -moz-transform 0.2s 0.6s;
+}
+.reqBox .line.Lleft {
+    border-left: 2px solid #444;
+    height: 100%;
+    transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    transform-origin: left top;
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transition: transform 0.3s 0.3s;
+    -webkit-transition: -webkit-transform 0.3s 0.3s;
+    -moz-transition: -moz-transform 0.3s 0.3s;
+}
+.reqBox .line.Lright {
+    border-right: 2px solid #444;
+    height: 100%;
+    transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    transform-origin: left top;
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transition: transform 0.2s 0.6s;
+    -webkit-transition: -webkit-transform 0.2s 0.6s;
+    -moz-transition: -moz-transform 0.2s 0.6s;
+}
+.reqBox:hover .Ltop {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+}
+.reqBox:hover .Lleft {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+}
+.reqBox:hover .Lbottom {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+}
+.reqBox:hover .Lright {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+}
