@@ -17,9 +17,11 @@ const Home = () => {
     return (
         <div>
             <Banner />
+            <div className="divider"></div>
             <div data-aos="fade-up">
                 <Gallery toysList={toysList} />
             </div>
+            <div className="divider"></div>
             <div data-aos="fade-up">
                 <TabSection toysList={toysList} />
             </div>

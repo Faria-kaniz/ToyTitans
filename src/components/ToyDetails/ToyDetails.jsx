@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import './ToyDetails.css'
 
 const ToyDetails = () => {
     const detailsData = useLoaderData();
@@ -16,16 +17,28 @@ const ToyDetails = () => {
         sub_category,
     } = detailsData;
     return (
-        <div className="card mx-2">
-            <div className="img">
-                <img src={picture} alt="toy" />
+        <div className="hero min-h-screen ">
+            <div className="hero-content flex-col lg:flex-row-reverse w-3/5 border">
+                <img
+                    src={picture}
+                    className="max-w-sm rounded-lg shadow-2xl w-1/3 itemImg"
+                />
+                <div className="w-2/3">
+                    <h1 className="text-5xl font-bold">{name}</h1>
+                    <div className="flex justify-between">
+                        <div className="w-1/2">Seller: {seller_name}</div>
+                        <div className="w-1/2">Email: {seller_email}</div>
+                    </div>
+                    <div className="flex justify-between">
+                        <div className="w-1/2">Price: {price}</div>
+                        <div className="w-1/2">Rating: {rating}</div>
+                    </div>
+                    <div className="flex justify-between">
+                        <div className="w-1/2">Available: {quantity}</div>
+                    </div>
+                    <p className="py-6">{description}</p>
+                </div>
             </div>
-            <span>{name}</span>
-            <p className="info">{description}</p>
-            <div className="share"></div>
-            <Link to="">
-                <button className="btn btn-sm">View Details</button>
-            </Link>
         </div>
     );
 };
