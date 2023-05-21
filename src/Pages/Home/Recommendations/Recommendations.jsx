@@ -4,7 +4,7 @@ import './Recommendations.css';
 const Recommendations = () => {
     return (
         <div className="custom-container">
-            <h1 className="text-center text-5xl font-bold my-8">
+            <h1 className="text-center lg:text-5xl font-bold my-8">
                 Top Recommendations
             </h1>
             <div className="grid gap-8 mt-4">

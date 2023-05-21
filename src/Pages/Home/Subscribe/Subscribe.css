@@ -3,13 +3,13 @@
     margin: 60px auto;
 }
 
-#subscribe-form{
-    background-color: #9DB2BF;
+#subscribe-form {
+    background-color: #9db2bf;
     padding: 20px;
 }
 #subscribe-form .container {
     padding: 20px;
-    background-color: #9DB2BF;
+    background-color: #9db2bf;
 }
 
 #subscribe-form input[type="text"],
@@ -27,11 +27,29 @@
 }
 
 #subscribe-form input[type="submit"] {
-    background-color: #27374D;
+    background-color: #27374d;
     color: white;
     border: none;
 }
 
 #subscribe-form input[type="submit"]:hover {
     opacity: 0.8;
+}
+@media screen and (max-width: 460px) {
+    #subscribe-form {
+        padding: 10px;
+    }
+    #subscribe-form h1 {
+        margin: 0px;
+    }
+    #subscribe-form .container {
+        padding: 10px;
+    }
+    #subscribe-form input[type="text"],
+    #subscribe-form input[type="submit"] {
+        padding: 4px 8px;
+    }
+    #subscribe-form input[type="submit"] {
+        margin: 0px;
+    }
 }

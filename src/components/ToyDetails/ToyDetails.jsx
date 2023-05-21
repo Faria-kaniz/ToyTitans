@@ -24,7 +24,7 @@ const ToyDetails = () => {
                     className="max-w-sm rounded-lg shadow-2xl w-1/3 itemImg"
                 />
                 <div className="w-2/3">
-                    <h1 className="text-5xl font-bold">{name}</h1>
+                    <h1 className="lg:text-5xl font-bold">{name}</h1>
                     <div className="flex justify-between">
                         <div className="w-1/2">Seller: {seller_name}</div>
                         <div className="w-1/2">Email: {seller_email}</div>

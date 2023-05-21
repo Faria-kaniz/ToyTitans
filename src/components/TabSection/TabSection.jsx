@@ -19,7 +19,7 @@ const TabSection = ({ toysList }) => {
 
     return (
         <div className="custom-container mt-4">
-            <h1 className="text-center text-5xl font-bold my-8">
+            <h1 className="text-center lg:text-5xl font-bold my-8">
                 Shop by Category
             </h1>
             <div className="mt-4">

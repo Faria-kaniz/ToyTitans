@@ -4,7 +4,7 @@ import "./Subscribe.css";
 const Subscribe = () => {
     return (
         <div id="subscribe-form" className="custom-container">
-            <h1 className="text-center text-5xl font-bold my-8">
+            <h1 className="text-center lg:text-5xl font-bold my-8">
                 Subscribe
             </h1>
             <div className="container">

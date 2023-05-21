@@ -278,3 +278,22 @@
     -moz-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
 }
+
+@media screen and (max-width: 460px) {
+    .reqBox {
+        padding: 5px;
+    }
+    .reqBox .txt_move.txt1 {
+        margin-top: 0px;
+    }
+    .reqBox .txt_move {
+        display: inline;
+        margin-bottom: 0px;
+        font-size: 7px;
+        line-height: 0px;
+        letter-spacing: 0px;
+    }
+    .reqBox .txt_move:after {
+        height: 0px;
+    }
+}
